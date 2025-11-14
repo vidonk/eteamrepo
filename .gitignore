@@ -1,3 +1,15 @@
 /bin
 /build
 compile_commands.json
+# VS Code and VEX build directories
+build/
+.vscode/
+vex/
+
+# Compiled and temporary files
+*.o
+*.a
+*.out
+*.log
+*.tmp
+.DS_Store
