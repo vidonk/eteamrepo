@@ -14,7 +14,6 @@ void runAutonomous() {
       exampleAuton2();
       break;  
     case 3:
-      redGoalRush();
       break;
     case 4:
       break; 
