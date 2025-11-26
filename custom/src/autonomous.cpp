@@ -35,35 +35,6 @@ void exampleAuton2() {
   turnToAngle(180, 800, true);
 }
 
-double arm_pid_target = 0, arm_load_target = 60, arm_store_target = 250, arm_score_target = 470;
-
-/*
- * armPID
- * Runs a single PID update for the arm motor to reach the specified target position.
- * - arm_target: Desired arm position (degrees).
- */
-void armPID(double arm_target) {
-  PID pidarm = PID(0.1, 0, 0.5); // Initialize PID controller for arm
-  pidarm.setTarget(arm_target);   // Set target position
-  pidarm.setIntegralMax(0);  
-  pidarm.setIntegralRange(1);
-  pidarm.setSmallBigErrorTolerance(1, 1);
-  pidarm.setSmallBigErrorDuration(0, 0);
-  pidarm.setDerivativeTolerance(100);
-  pidarm.setArrive(true);
-}
-
-/*
- * armPIDLoop
- * Continuously runs the arm PID control in a separate thread, keeping the arm at the target position.
- */
-void armPIDLoop() {
-  while(true) {
-    armPID(arm_pid_target); // Continuously update arm position
-    wait(10, msec);
-  }
-}
-
 /*
  * rushClamp
  * Waits until the clamp distance sensor detects an object within 85mm, then closes the claw and lowers the rush arm.

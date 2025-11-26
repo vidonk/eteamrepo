@@ -21,20 +21,20 @@ motor left_chassis2 = motor(PORT6, ratio6_1, true);
 motor left_chassis3 = motor(PORT7, ratio6_1, false);
 motor_group left_chassis = motor_group(left_chassis1, left_chassis2, left_chassis3);
 motor right_chassis1 = motor(PORT3, ratio6_1, false);
-motor right_chassis2 = motor(PORT4, ratio6_1, false);
+motor right_chassis2 = motor(PORT12, ratio6_1, false);
 motor right_chassis3 = motor(PORT11, ratio6_1, true);
 motor_group right_chassis = motor_group(right_chassis1, right_chassis2, right_chassis3);
 
 inertial inertial_sensor = inertial(PORT9);
 
-// Format is rotation(port, reversed)
+// Format is (port, reversed)
 // just set these to random ports if you don't use tracking wheels
 rotation horizontal_tracker = rotation(PORT13, true);
 rotation vertical_tracker = rotation(PORT19, true);
 
 // game specific devices for high stakes
-motor intake1 = motor(PORT2, ratio6_1, true);
-motor intake2 = motor(PORT1, ratio6_1, true);
+motor intake1 = motor(PORT8, ratio6_1, true);
+motor intake2 = motor(PORT2, ratio6_1, true);
 digital_out scraper = digital_out(Brain.ThreeWirePort.F);
 digital_out descore = digital_out(Brain.ThreeWirePort.G);
 

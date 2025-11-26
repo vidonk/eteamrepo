@@ -5,7 +5,7 @@
 // Modify autonomous, driver, or pre-auton code below
 
 void runAutonomous() {
-  int auton_selected = 3;
+  int auton_selected = 2;
   switch(auton_selected) {
     case 1:
       exampleAuton();
@@ -68,16 +68,7 @@ void runDriver() {
 
     driveChassis(forward + turn, forward - turn);
 
-    if(r1){
-      intake1.spin(reverse, 12, volt);                   
-      intake2.stop(hold);
-    } else if(r2) {
-      intake1.spin(reverse, 12, volt);
-      intake2.spin(reverse, 12, volt);
-    } else {
-      intake1.spin(reverse, 0, volt);
-      intake2.spin(reverse, 0, volt);
-    }
+    
     //test change for source control
     
       
