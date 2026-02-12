@@ -7,10 +7,10 @@
 
 
 void runAutonomous() {
- int auton_selected = 4;
+ int auton_selected = 1;
  switch(auton_selected) {
    case 1:
-     autonskillsCOMPLEX();
+     autonskillsActual();
      break;
    case 2:
      autonskills(); //newly made
