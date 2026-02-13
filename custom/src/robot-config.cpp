@@ -26,7 +26,7 @@ motor left_chassis3 = motor(PORT11, ratio6_1, true);
 motor_group left_chassis = motor_group(left_chassis1, left_chassis2, left_chassis3);
 motor right_chassis1 = motor(PORT19, ratio6_1, false);
 motor right_chassis2 = motor(PORT9, ratio6_1, true);
-motor right_chassis3 = motor(PORT20, ratio6_1, false);
+motor right_chassis3 = motor(PORT17, ratio6_1, false);
 
 
 motor_group right_chassis = motor_group(right_chassis1, right_chassis2, right_chassis3);
