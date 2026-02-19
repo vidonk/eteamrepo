@@ -205,115 +205,85 @@ void leftside7(){
  intake2.spin(fwd,12,volt);
 }
 
-void autonskills(){
- intake1.spin(fwd,12,volt);
- turnToPoint(13.5, 33.5, 1, 260); //first stack, increased x coord to 9.5, 250 to 275 to 260, x coord to 10.5 to 10
- driveTo(3.5,2000,false,2.3); //distance before matchloader is put down, 13.7 to 14, then to 14.5, then to 15, then to 14, 2000 to 2100, 4 to 3.7, 13.7 to 12
- wait(200, msec);
- scraper.set(true); //scraper down
- driveTo(4, 1000, false, 4);
- wait(1000,msec); // 400 to 500
- driveTo(2,500,false,4);
- moveToPoint(42,1,1,1500,false,9); //drive to long goal area
+void sawp (){
+}
 
-
- intake1.spin(reverse,12,volt);
- intake2.spin(reverse,12,volt);
- wait(200,msec);
- turnToPoint(40,-10,1, 1500); // drive into long goal
- driveTo(-18,1000,false,4);
- intake1.spin(fwd,12,volt);
- intake2.spin(fwd,12,volt);
- wait(2500,msec);
- 
-
-
- driveTo(16,1700,true,5); //drive into matchload, 14.6 changed to 14.8, then 14.7, changed to 14.5, then to 15, max voltage decreased, then to 14
- wait(50, msec);
- moveToPoint(45, -13, 1, 1500, false, 6);
- wait(50, msec);
- driveTo(10, 1700, true, 5);
- intake2.spin(fwd,0,volt);
- intake1.spin(fwd,12,volt);
- wait(2500,msec); //wait from 270 to 235
- intake1.spin(reverse, 12, volt);
- intake1.spin(fwd,12,volt);
- wait(100,msec); //added
- moveToPoint(45,11,-1,1100,true,10); //back out of matchload, was 45.2 but changed to 45, then changed to 44, then 44.5, then 45 and 1100, then 43 to move more left from 45
- driveTo(-10, 500,true,12); // -7 to -10
- intake1.spin(reverse,12,volt);
- intake2.spin(reverse,12,volt);
- wait(300,msec);
- intake1.spin(fwd,12,volt);
- intake2.spin(fwd,12,volt); //score into long goal
- wait(3500,msec); // increased from 2000 to 2050 ms
- scraper.set(false);
- intake2.spin(fwd,0,volt);
- intake1.spin(fwd,0,volt);
- driveTo(15, 500, true, 12); //
- turnToAngle(-85, 400, true, 12); //increased speed
- driveTo(13.94, 850, true, 12); //13.5 to 13.9, time out increased by 50 ms from 800 to 850, DECREASED DISTANCE FROM 17 TO 16
- turnToAngle(-1, 300, true, 12); //350 to 400
- driveTo(30, 2300, true,4);// changed to 33 then 36, 1300 // push
- driveTo(-24, 1300, true,8); // drive out of long goal
- turnToAngle(-85, 400, true, 12); //turn to other long goal
-  
- intake1.spin(fwd,12,volt); // second stack
- driveTo(43, 1300, true, 8);
- turnToAngle(-65, 400, true, 12);
- driveTo(43, 1000, true, 2.5);
- scraper.set(true);
- driveTo(13, 1000, true, 2.5);
- wait(800, msec);
-
- moveToPoint(-55,-5,1,2000,false,9); //drive to matchload area, -20 to -10
- turnToAngle(181,500,true,4);
- driveTo(-10,500,false,4); //drive to long goal
- intake1.spin(fwd,12,volt);
- intake2.spin(fwd,12,volt);
- wait(2500,msec);
-
- driveTo(15, 2000, true, 5); // drive to matchload
- wait(50, msec);
- moveToPoint(-53, -10, 1, 2500, true, 7);
- wait(50, msec);
- driveTo(8, 2000, true, 5);
- intake2.spin(fwd,0,volt);
- intake1.spin(fwd,12,volt);
- wait(2500,msec); //wait from 270 to 235
- intake1.spin(reverse, 12, volt);
- intake1.spin(fwd,12,volt);
- wait(100,msec); //added
-
- driveTo(-8, 2000, true, 8); // drive back to long goal and score it
- wait(50, msec);
- moveToPoint(-53, -10, 1, 2500, true, 7);
- wait(50, msec);
- driveTo(-24, 2000, true, 8);
- intake1.spin(reverse, 12, volt);
- intake2.spin(reverse, 12, volt);
- wait(100, msec);                            
- intake1.spin(fwd, 12, volt);
- intake2.spin(fwd, 12, volt);
- wait(4000, msec);
-
- scraper.set(false);
-
- driveTo(15, 500, true, 12); //
- turnToAngle(-85, 400, true, 12); //increased speed
- driveTo(14.1, 850, true, 12); //13.5 to 13.9, time out increased by 50 ms from 800 to 850, DECREASED DISTANCE FROM 17 TO 16
- turnToAngle(-1, 300, true, 12); //350 to 400
- driveTo(30, 2300, true,5);// changed to 33 then 36, 1300 // push
- driveTo(-24, 1300, true,8); // drive out of long goal
- turnToAngle(85, 400, true, 12); //turn to other long goal
-
- moveToPoint(-55, -33, 1, 25000, true, 7);
- scraper.set(true);
- driveTo(16,1000,true,5);
+void autonskills(){// turn to first stack
+  intake2.spin(reverse,1,volt);
+  intake1.spin(fwd,12,volt);
+  driveTo(20,700,true,7);
+  driveTo(-2,1000,true,3);
+  turnToAngle(-135,2000,true,5);
 
 }
 
 void autonskillsActual(){ 
+  intake1.spin(fwd,12,volt);
+  intake2.spin(reverse,1,volt);
+  turnToAngle(60,500,true,12); // turn to face stack
+  driveTo(13,1500,true,6);
+  intake1.spin(fwd,0,volt);
+  driveTo(10,1000,true,5);
+  turnToAngle(-45,1000,true,12); // turn to angle midgaol
+  driveTo(-24,1000,true,7);
+  scraper.set(true);
+  wait(500,msec);
+  intake1.spin(reverse,12,volt); // unjam
+  intake2.spin(reverse,0,volt);
+  wait(100,msec);
+  midgoal.set(true);
+  wait(200,msec);
+  intake1.spin(fwd,10,volt); //outtake in midgoal
+  wait(1250,msec);
+  midgoal.set(false);
+  intake2.spin(reverse,1,volt);
+  driveTo(55,1250, true, 8); // drive to matchloader
+  turnToAngle(-90,400,true,7); //angle to matchloader
+  driveTo(23,1000,true,7); // inside of matchloader, 9 to 7 
+  wait(1500,msec);
+  scraper.set(false);
+  moveToPoint(11,47,-1,1000,true,8); // hop out of matchloader, from 48 to 45 tp 49
+  turnToAngle(-90,400,true,7);
+  driveTo(-70,3000,true,11); //drive through corridor
+  boomerang(96, 42, 1, 90, 0.3, 1000, false, 8); // align with long goal
+  driveTo(-20, 1200, true, 8); //drive into it
+  scraper.set(true);
+  intake1.spin(reverse, 12, volt);
+  intake2.spin(reverse, 12, volt);
+  wait(100, msec); 
+  intake1.spin(fwd, 12, volt);
+  intake2.spin(fwd, 12, volt);
+  wait(1500, msec);
+  intake2.spin(fwd,0,volt);
+  moveToPoint(137, 42, 1, 1100, true, 7); // 44 to 42y , drive into matchloader point
+  wait(1500,msec);
+  moveToPoint(74,47,-1,1000,true,8); // move back to the long goal
+  driveTo(-10,1200,true,9); //align fully to long goal
+  intake1.spin(reverse, 12, volt);
+  intake2.spin(reverse, 12, volt);
+  wait(250, msec); //unjam
+  intake1.spin(fwd, 12, volt);
+  intake2.spin(fwd, 12, volt);
+  scraper.set(true); 
+  wait(1700,msec); //score
+  intake1.spin(fwd,0,volt);
+  intake2.spin(fwd,0,volt);
+  scraper.set(false); //scraper up
+  moveToPoint(117,10,1,1100,true,8); //move to goal 
+  turnToAngle(180,500,true,10); //align to goal
+  wait(250,msec);
+  driveTo(10,1200,true,8); //move a lil further
+  scraper.set(true); // scraper down
+  wait(100,msec);
+  scraper.set(false); //scraper back up
+  intake1.spin(fwd,12,volt);
+  driveTo(60,1500,true,7); //drive through section
+  // next : align backwards to midgoal
+  //then can copy paste some stuff from old autonskills
+
+
+
+  /*
   driveTo(32.5, 1000, true, 8);
   turnToAngle(-90, 400, true, 7);
   scraper.set(true);
@@ -367,7 +337,7 @@ void autonskillsActual(){
   turnToAngle(180, 400, false, 10);
   wait(50, msec);
   driveTo(95, 2500, false, 7);
-  /*moveToPoint(62, -21, -1, 2000, false, 6);  //midgoal alignment
+  moveToPoint(62, -21, -1, 2000, false, 6);  //midgoal alignment
   turnToAngle(135, 1000, false, 9); //midgoal angle
   scraper.set(true);
   intake1.spin(reverse, 12, volt);
@@ -377,9 +347,13 @@ void autonskillsActual(){
   driveTo(-6, 500, true, 9);  // drive into midgoal
   intake2.spin(fwd, 0, volt);
   intake1.spin(fwd, 12, volt);
-  wait(3500, msec);*/                                                                                                           
+  wait(3500, msec);                                                                                                       
   //turnToAngle(150, 500, false, 8); // 30 to 45
   //driveTo(27, 1000, true, 9);
+  // wait(3500, msec);
+  // turnToAngle(150, 500, false, 8); // 30 to 45
+
+  driveTo(27, 1000, true, 9);
  
   moveToPoint(102, -63, 1, 1500, true, 9); //align to the third loader
   midgoal.set(false);
@@ -421,7 +395,7 @@ void autonskillsActual(){
   intake1.spin(fwd,12,volt);// score
   intake2.spin(fwd,12,volt);
   wait(3000,msec);
-//final point?
+
   driveTo(8, 600, false, 8);
   turnToAngle(0, 700, true, 9); //+90
   driveTo(63, 3000, false, 10);
@@ -438,10 +412,11 @@ void autonskillsActual(){
   driveTo(15, 1000, true, 11);
 
 
-  
+  */
   
 
-  //
+  
+ 
  
 }
 
@@ -526,10 +501,3 @@ void leftside(){
  wait(250, msec);                   
 }
 */
-
-
-
-
-
-
-
