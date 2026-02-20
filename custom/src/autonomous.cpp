@@ -274,7 +274,7 @@ void autonskillsActual(){
   intake1.spin(fwd,0,volt);
   intake2.spin(fwd,0,volt);
   scraper.set(false); //scraper up
-  moveToPoint(68.3,-8,1,1100,true,8); // move to park
+  moveToPoint(67,-8,1,1100,true,8); // move to park
   turnToAngle(175,500,true,10); //align to park
   driveTo(18,1000,true,5); //move a lil further
   driveTo(-6, 300, true, 8);
@@ -283,21 +283,9 @@ void autonskillsActual(){
   driveTo(10, 750, true, 4);
   scraper.set(false); //scraper back up
   intake1.spin(fwd,12,volt);
-  driveTo(92,2000,true,6); //drive through section
-  resetPositionLeft();
+  driveTo(92,2000,true,7); //drive through section
 
-  moveToPoint(60,-80,-1,1100,true,8);
-  scraper.set(true);
-  wait(500,msec);
-  intake1.spin(reverse,12,volt); // unjam
-  intake2.spin(reverse,0,volt);
-  wait(100,msec);
-  midgoal.set(true);
-  wait(200,msec); 
-  intake1.spin(fwd,10,volt); //outtake in midgoal
-  wait(1000,msec);
-  midgoal.set(false);
-  intake2.spin(reverse,1,volt);
+  moveToPoint(0,0,-1,1100,true,8);
 
 
 
