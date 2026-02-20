@@ -36,3 +36,10 @@ void trackYOdomWheel();
 void turnToPoint(double x, double y, int dir, double time_limit_msec);
 void moveToPoint(double x, double y, int dir, double time_limit_msec, bool exit = true, double max_output = 12, bool overturn = false);
 void boomerang(double x, double y, int dir, double a, double dlead, double time_limit_msec, bool exit = true, double max_output = 12, bool overturn = false);
+
+extern double field_half_size;
+void resetPositionWithSensor(vex::distance& sensor, double sensor_offset, double sensor_angle_deg, double field_half_size = 72);
+void resetPositionFront();
+void resetPositionBack();
+void resetPositionLeft();
+void resetPositionRight();

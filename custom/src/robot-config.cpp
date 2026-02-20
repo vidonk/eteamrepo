@@ -44,7 +44,10 @@ rotation horizontal_tracker = rotation(PORT13, true);
 rotation vertical_tracker = rotation(PORT19, true);
 
 
-// game specific devices for high stakes
+// Distance reset sensors
+// Set these to random ports if you are not using distance resets
+distance left_sensor = distance(PORT3);
+distance right_sensor = distance(PORT10);
 
 
 // ============================================================================
@@ -83,6 +86,9 @@ double horizontal_tracker_dist_from_center = 2.71875;
 double vertical_tracker_dist_from_center = -0.03125;
 double horizontal_tracker_diameter = 1.975; // Diameter of the horizontal tracker wheel (in inches)
 double vertical_tracker_diameter = 1.975; // Diameter of the vertical tracker wheel (in inches)
+
+double left_sensor_offset = 5.5;
+double right_sensor_offset = 5.5;
 
 
 // ============================================================================
